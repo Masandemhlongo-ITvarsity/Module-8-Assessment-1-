@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body style="background-image: url('images/porous-wall-background_23-2147625741.avif');">
+
+        <div class="wrapper">
+            <form action="#">
+                <h2 class="title">Login Form</h2>
+                <br>
+                <label for="usernameInput">Username :<img src="images/bx-user.svg"></label>
+                <div class="input-box">
+                 <input type="text" placeholder="username" required>
+                </div>
+                <br>
+                <label for="passwordInput">Password:</label>
+                <div class="input-box">
+                    <input type="password" placeholder="password" required>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me</label>
+                        <a href="password.html">Forgot Password</a>
+                </div>
+                <a href="login.html"><button type="submit" class="btn" onclick="verifyUser()">Login</a></button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#">Register</a> </p>
+                </div>
+            </form>
+        </div>
+            <script>
+           
+           function verifyUser(){
+               var username = document.getElementById("usernameInput").value;
+               var password = document.getElementById("passwordInput").value;
+               
+               checkUserCreds(username, password);
+           }
+            
+            function checkUserCreds(username, password){
+                var systemUsername = "Bond";
+                var systemPassword = "007";
+                
+                if(username == systemUsername && password == systemPassword){
+                    document.getElementById("message").innerHTML = "Correct. Logging you in...";
+                } else {
+                    document.getElementById("message").innerHTML = "Username or password are incorrect";
+                }
+            }
+        </script>
+    </body>
+</html>
